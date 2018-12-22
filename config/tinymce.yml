@@ -1,6 +1,5 @@
 default:
   plugins:
-  - image
   - link
 
 alternate:
