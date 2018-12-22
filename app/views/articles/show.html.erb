@@ -1,16 +1,16 @@
-<div class="container-fluid">
+<!--Featured image-->
+
+<div style="margin-bottom: -50px">
+  <div class="view view-cascade overlay">
+    <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(146).jpg" alt="Second wide sample post image" class="card-img-top">
+    <a>
+      <div class=""></div>
+    </a>
+  </div>
+</div>
+<div class="container">
   <div class="row">
-    <div class="col-md-12">
-      <!--Featured image-->
-
-      <div class="card card-cascade wider reverse">
-        <div class="view view-cascade overlay">
-          <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(146).jpg" alt="Second wide sample post image" class="card-img-top">
-          <a>
-            <div class=""></div>
-          </a>
-        </div>
-
+    <div class="col-md-12 card card-cascade">
         <!--Post data-->
         <div class="card-body card-body-cascade text-center">
           <h2>
@@ -20,13 +20,38 @@
           <p>Category:
             <a><%= @article.category.title %></a>, <%= @article.created_at %></p>
         </div>
-        <!--Post data-->
-      </div>
+    </div>
+  </div>
 
-      <!--Excerpt-->
+  <div class="row">
+    <div class="col-md-12">
       <div class="excerpt mt-5">
         <%= @article.contents.html_safe %>
       </div>
     </div>
   </div>
+
+  <!-- Comments -->
+  <% if user_signed_in? %>
+  <div class="row">
+    <div class="col-12">
+      <!-- Quick Reply -->
+      <div class="form-group mt-4">
+        <%= form_for [@article, @comment], remote: true, format: 'json' do |f| %>
+          <%= f.label :contents, "Your comment" %>
+          <%= f.text_area :contents, rows: 5, class: 'form-control' %>
+
+        <div class="text-center my-4">
+          <%= f.submit "Post", class: 'btn btn-primary btn-sm waves-effect waves-light' %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+
+  <div class="row">
+      <div class="card-header border-0 font-weight-bold"><%= pluralize(@comments.length, 'comment') %></div>
+  </div>
+  <%= render 'comments', comments: @comments %>
 </div>

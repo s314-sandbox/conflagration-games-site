@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:show]
 
   def index
   end
@@ -31,11 +31,13 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+    @comments = @article.comments.order(created_at: :desc)
+    @comment = Comment.new
   end
 
   private
   def article_params
-    taken = params.require(:article).permit(:title, :contents, :category, :author)
+    taken = params.require(:article).permit(:title, :contents, :description, :category, :author)
     taken[:category] = Category.find(taken[:category])
     taken[:author] = User.find(taken[:author])
     taken

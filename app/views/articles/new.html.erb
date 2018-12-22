@@ -14,12 +14,16 @@
 
     <%= form_for @article do |f| %>
       <div class="md-form">
-        <%= f.label :title %><br />
-        <%= f.text_field :title, class: 'form-control' %>
+        <%= f.text_field :title, class: 'form-control', onfocus: 'checkInputs();', onblur: 'checkInputs();' %>
+        <%= f.label :title %>
+      </div>
+      <div class="md-form">
+        <%= f.text_area :description, rows: 5, cols: 5, class: 'form-control md-textarea', length: 300, onfocus: 'checkInputs();', onblur: 'checkInputs();' %>
+        <%= f.label :description %>
       </div>
       <div>
         <%= f.label :contents %><br />
-        <%= f.text_area :contents, rows: 5, cols: 25, class: 'tinymce' %>
+        <%= f.text_area :contents, rows: 10, cols: 25, class: 'tinymce' %>
       </div>
       <div>
         <%= f.label :category %>

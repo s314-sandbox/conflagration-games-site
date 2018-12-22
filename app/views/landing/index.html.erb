@@ -14,9 +14,9 @@
         </div>
 
         <!--Excerpt-->
-        <a href="" class="pink-text">
+        <a href="" class="amber-text">
           <h6 class="mb-3 mt-4">
-            <i class="fa fa-dice-d20"></i>
+            <%= icon('folder-open') %>
             <strong> <%= item.category.title %></strong>
           </h6>
         </a>
@@ -25,8 +25,8 @@
         </h4>
         <p>by
           <a class="font-weight-bold dark-grey-text"><%= item.author.email %></a>, <%= item.created_at %></p>
-        <p class="grey-text"><%= item.contents.first(300) %></p>
-        <%= link_to "Read more", article_path(item), class: "btn btn-pink btn-rounded btn-md waves-effect waves-light" %>
+        <p class="grey-text"><%= item.description %></p>
+        <%= link_to "Read more", article_path(item), class: "btn btn-amber btn-rounded btn-md waves-effect waves-light" %>
       </div>
     <% end %>
     </div>
