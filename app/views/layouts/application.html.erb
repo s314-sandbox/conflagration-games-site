@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ProjectConflagration</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <nav class="mb-1 navbar navbar-expand-lg fixed-top scrolling-navbar navbar-dark elegant-color double-nav">
+    <a class="navbar-brand" href="#">CONFLAGRATION</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-3" aria-controls="navbarSupportedContent-3" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent-3">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link waves-effect waves-light" href="#">About
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link waves-effect waves-light" href="#">Games</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link waves-effect waves-light" href="#">News</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto nav-flex-icons">
+        <li class="nav-item navbar-text">
+          <% if user_signed_in? %>Logged in as <strong><%= current_user.email %></strong><% end %>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-user"></i>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right dropdown-danger" aria-labelledby="navbarDropdownMenuLink">
+            <% if user_signed_in? %>
+              <%= link_to "Add article", new_article_path, class: 'dropdown-item waves-effect waves-light' %>
+              <%= link_to "Add category", new_category_path, class: 'dropdown-item waves-effect waves-light' %>
+              <%= link_to "My profile", edit_user_registration_path, class: 'dropdown-item waves-effect waves-light' %>
+               <%= link_to "Logout", destroy_user_session_path, method: 'delete', class: 'dropdown-item waves-effect waves-light' %>
+            <% else %>
+              <%= link_to "Sign Up", new_user_registration_path, class: 'dropdown-item waves-effect waves-light' %>
+              <%= link_to "Login", new_user_session_path, class: 'dropdown-item waves-effect waves-light' %>
+            <% end %>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
+  <%= yield %>
+
+  <footer class="page-footer pt-0">
+
+    <!--Footer Links-->
+    <div class="container">
+
+      <!--First row-->
+      <div class="row">
+
+        <!--First column-->
+        <div class="col-md-12 wow fadeIn" data-wow-delay="0.3s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.3s;">
+
+          <div class="text-center d-flex justify-content-center my-4">
+
+            <!--Facebook-->
+            <a class="p-2 m-2 fa-lg fb-ic"><i class="fa fa-facebook white-text fa-lg pr-md-4"> </i></a>
+            <!--Twitter-->
+            <a class="p-2 m-2 fa-lg tw-ic"><i class="fa fa-twitter white-text fa-lg pr-md-4"> </i></a>
+            <!--Google +-->
+            <a class="p-2 m-2 fa-lg gplus-ic"><i class="fa fa-google-plus white-text fa-lg pr-md-4"> </i></a>
+            <!--Linkedin-->
+            <a class="p-2 m-2 fa-lg li-ic"><i class="fa fa-linkedin white-text fa-lg pr-md-4"> </i></a>
+            <!--Instagram-->
+            <a class="p-2 m-2 fa-lg ins-ic"><i class="fa fa-instagram white-text fa-lg pr-md-4"> </i></a>
+            <!--Pinterest-->
+            <a class="p-2 m-2 fa-lg pin-ic"><i class="fa fa-pinterest white-text fa-lg pr-md-4"> </i></a>
+          </div>
+
+        </div>
+        <!--/First column-->
+
+      </div>
+      <!--/First row-->
+
+    </div>
+    <!--/Footer Links-->
+
+    <!--Copyright-->
+    <div class="footer-copyright py-3 text-center wow fadeIn" data-wow-delay="0.3s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.3s;">
+      <div class="container-fluid">
+        © 2018 Copyright: <a href="https://s314.ru" target="_blank"> Maxim 's314' Usmanov </a>
+      </div>
+    </div>
+    <!--/.Copyright-->
+
+  </footer>
+  </body>
+</html>
