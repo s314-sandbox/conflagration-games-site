@@ -1,13 +1,18 @@
 <% comments.each do |comment| %>
+  <%= form_for [article, comment], remote: true, format: 'json', html: { method: :delete, class: 'comment-form' } do |f| %>
   <div class="row">
     <div class="media d-block d-md-flex mt-4">
       <img class="card-img-64 d-flex mx-auto mb-3" src="https://i.imgur.com/1P7lRoq.gif" alt="Generic placeholder image">
       <div class="media-body text-center text-md-left ml-md-3 ml-0">
         <h5 class="font-weight-bold mt-0">
           <a href=""><%= comment.user.email %></a>
+          <span class="pull-right">
+              <%= f.submit "Delete", class: 'btn btn-red btn-sm waves-effect waves-light delete-button' %>
+          </span>
         </h5>
         <%= comment.contents %>
       </div>
     </div>
   </div>
+  <% end %>
 <% end %>

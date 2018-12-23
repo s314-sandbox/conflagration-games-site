@@ -2,6 +2,7 @@ class CategoriesController < ApplicationController
   before_action :authenticate_user!
 
   def index
+    @categories = Category.all
   end
 
   def new
@@ -19,9 +20,18 @@ class CategoriesController < ApplicationController
   end
 
   def update
+    @category = Category.find(params[:id])
+    if @category.update(category_params)
+      flash[:notice] = 'Category was updated'
+      redirect_to category_path(@category)
+    else
+      flash[:notice] = 'Category was not updated'
+      render 'edit'
+    end
   end
 
   def edit
+    @category = Category.find(params[:id])
   end
 
   def show
@@ -29,9 +39,14 @@ class CategoriesController < ApplicationController
   end
 
   def destroy
+    @category = Category.find(params[:id])
+    @category.destroy
+    flash[:notice] = 'Category was deleted'
+    redirect_to category_path
   end
 
   private
+
   def category_params
     params.require(:category).permit(:title, :game)
   end

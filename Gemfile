@@ -65,4 +65,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'font-awesome-sass', '~> 4.6', '>= 4.6.2'
 gem 'jquery-rails'
+gem 'rails-i18n'
 gem 'tinymce-rails'

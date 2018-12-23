@@ -1,0 +1,36 @@
+<div class="row">
+
+  <!--Grid column-->
+  <div class="col-lg-5 col-xl-5 pb-3">
+    <!--Featured image-->
+    <div class="view overlay rounded z-depth-2">
+      <%= image_tag 'n_wal.jpg', class: 'img-fluid', alt: 'First' %>
+      <a>
+        <div class="mask waves-effect waves-light"></div>
+      </a>
+    </div>
+  </div>
+  <!--Grid column-->
+
+  <!--Grid column-->
+  <div class="col-lg-7 col-xl-7">
+    <!--Excerpt-->
+    <a href="" class="amber-text">
+      <h6 class="font-weight-bold pb-1">
+        <i class="fa fa-folder-open"></i> <%= article.category.title %></h6>
+    </a>
+    <h3 class="mb-4 font-weight-bold dark-grey-text">
+      <strong><%= article.title %></strong>
+    </h3>
+    <p><%= article.description.html_safe %></p>
+    <p>by
+      <a>
+        <strong><%= article.author.email %></strong>
+      </a>, <%= article.created_at %></p>
+    <%= link_to "Read more", article_path(article), class: "btn btn-amber btn-rounded btn-md waves-effect waves-light" %>
+    <%= link_to "Edit", edit_article_path(article), class: "btn btn-outline-amber btn-rounded btn-md waves-effect waves-light" %>
+    <%= link_to "Delete", article_path(article), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-outline-red btn-rounded btn-md waves-effect waves-light" %>
+  </div>
+  <!--Grid column-->
+
+</div>

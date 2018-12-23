@@ -1,2 +1,24 @@
-<h1>Categories#edit</h1>
-<p>Find me in app/views/categories/edit.html.erb</p>
+<h1>Edit category</h1>
+
+<% if @category.errors.any? %>
+  <h2>The following errors prevented the category from saving:</h2>
+  <ul>
+    <% @category.errors.full_messages.each do |msg|%>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @category do |f| %>
+  <div>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div>
+    <%= f.label :game %><br />
+    <%= f.check_box :game %>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end  %>
