@@ -30,4 +30,70 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  games: "Games"
+  news: "News"
+  logged_in: "Logged in as"
+  sign_up: "Sign up"
+  sign_in: "Login"
+  account: "My profile"
+  add_article: "Add article"
+  add_category: "Add category"
+  logogut: "Logout"
+  ru_ru: "RU"
+  en_us: "EN"
+  landing:
+    index:
+      last_news: "Last news"
+      read_more: "Read more"
+  articles:
+    new:
+      header: "Add new article"
+      title: "Title"
+      description: "Description"
+      contents: "Contents"
+      category: "Category"
+      submit: "Create Article"
+    edit:
+      header: "Edit article"
+      title: "Title"
+      description: "Description"
+      contents: "Contents"
+      category: "Category"
+      submit: "Update Article"
+    show:
+      author: "Author"
+      category: "Category"
+      comment_welcome: "Your comment"
+      post: "Post"
+      delete: "Delete"
+      count: "comment"
+    article_left:
+      by: "by"
+      more: "Read more"
+      edit: "Edit"
+      delete: "Delete"
+      sure: "Are you sure?"
+  categories:
+    new:
+      header: "Create category"
+      title: "Title"
+      game: "Is a game?"
+      submit: "Create category"
+    edit:
+      header: "Edit category"
+      title: "Title"
+      game: "Is a game?"
+      submit: "Update category"
+    index:
+      header: "Manage categories"
+      create: "Create new category"
+      title: "Title"
+      actions: "Actions"
+      edit: "Edit"
+      show: "Show"
+      delete: "Delete"
+      sure: "Are you sure?"
+    show:
+      header: "Showing selected category"
+      title: "Title"
+      game: "Is a game?"

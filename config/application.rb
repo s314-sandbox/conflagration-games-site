@@ -13,6 +13,8 @@ module ProjectConflagration
     config.assets.paths << Rails.root.join('app', 'assets', 'font', 'roboto')
     config.assets.paths << Rails.root.join('vendor', 'assets', 'img')
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
+    config.i18n.available_locales = [:en, :ru]
+    config.i18n.default_locale = :ru
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers

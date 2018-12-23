@@ -1,4 +1,4 @@
-<h1>Create category</h1>
+<h1><%= t('.header') %></h1>
 
 <% if @category.errors.any? %>
   <h2>The following errors prevented the category from saving:</h2>
@@ -11,14 +11,14 @@
 
 <%= form_for @category do |f| %>
   <div>
-    <%= f.label :title %><br />
+    <%= f.label :title, t('.title') %><br />
     <%= f.text_field :title %>
   </div>
   <div>
-    <%= f.label :game %><br />
+    <%= f.label :game, t('.game') %><br />
     <%= f.check_box :game %>
   </div>
   <div>
-    <%= f.submit %>
+    <%= f.submit t('.submit') %>
   </div>
 <% end  %>

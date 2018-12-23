@@ -18,19 +18,21 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent-3">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link waves-effect waves-light" href="#">About
-          </a>
+          <a class="nav-link waves-effect waves-light" href="#"><%= t('games') %></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link waves-effect waves-light" href="#">Games</a>
-        </li>
-        <li class="nav-item">
-          <%= link_to 'News', articles_path, class: 'nav-link waves-effect waves-light' %>
+          <%= link_to t('news'), articles_path, class: 'nav-link waves-effect waves-light' %>
         </li>
       </ul>
       <ul class="navbar-nav ml-auto nav-flex-icons">
+        <li class="nav-item">
+          <%= link_to t('ru_ru'), current_path(locale: 'ru'), class: 'nav-link waves-effect waves-light' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to t('en_us'), current_path(locale: 'en'), class: 'nav-link waves-effect waves-light' %>
+        </li>
         <li class="nav-item navbar-text">
-          <% if user_signed_in? %>Logged in as <strong><%= current_user.email %></strong><% end %>
+          <% if user_signed_in? %><%= t('logged_in') %> <strong><%= current_user.email %></strong><% end %>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -38,13 +40,13 @@
           </a>
           <div class="dropdown-menu dropdown-menu-right dropdown-danger" aria-labelledby="navbarDropdownMenuLink">
             <% if user_signed_in? %>
-              <%= link_to "Add article", new_article_path, class: 'dropdown-item waves-effect waves-light' %>
-              <%= link_to "Add category", new_category_path, class: 'dropdown-item waves-effect waves-light' %>
-              <%= link_to "My profile", edit_user_registration_path, class: 'dropdown-item waves-effect waves-light' %>
-               <%= link_to "Logout", destroy_user_session_path, method: 'delete', class: 'dropdown-item waves-effect waves-light' %>
+              <%= link_to t('add_article'), new_article_path, class: 'dropdown-item waves-effect waves-light' %>
+              <%= link_to t('add_category'), new_category_path, class: 'dropdown-item waves-effect waves-light' %>
+              <%= link_to t('account'), edit_user_registration_path, class: 'dropdown-item waves-effect waves-light' %>
+              <%= link_to t('logogut'), destroy_user_session_path, method: 'delete', class: 'dropdown-item waves-effect waves-light' %>
             <% else %>
-              <%= link_to "Sign Up", new_user_registration_path, class: 'dropdown-item waves-effect waves-light' %>
-              <%= link_to "Login", new_user_session_path, class: 'dropdown-item waves-effect waves-light' %>
+              <%= link_to t('sign_up'), new_user_registration_path, class: 'dropdown-item waves-effect waves-light' %>
+              <%= link_to t('sign_in'), new_user_session_path, class: 'dropdown-item waves-effect waves-light' %>
             <% end %>
           </div>
         </li>

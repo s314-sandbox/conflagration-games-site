@@ -16,8 +16,8 @@
           <h2>
             <a class="font-weight-bold"><%= @article.title %></a>
           </h2>
-          <p>Author: <%= @article.author.email %></p>
-          <p>Category:
+          <p><%= t('.author') %>: <%= @article.author.email %></p>
+          <p><%= t('.category') %>:
             <a><%= @article.category.title %></a>, <%= @article.created_at %></p>
         </div>
     </div>
@@ -38,11 +38,11 @@
       <!-- Quick Reply -->
       <div class="form-group mt-4">
         <%= form_for [@article, @comment], remote: true, format: 'json', id: 'comment-form' do |f| %>
-          <%= f.label :contents, "Your comment" %>
+          <%= f.label :contents, t('.comment_welcome') %>
           <%= f.text_area :contents, rows: 5, class: 'form-control' %>
 
         <div class="text-center my-4">
-          <%= f.submit "Post", class: 'btn btn-primary btn-sm waves-effect waves-light' %>
+          <%= f.submit t('.post'), class: 'btn btn-primary btn-sm waves-effect waves-light' %>
         </div>
         <% end %>
       </div>
@@ -51,7 +51,7 @@
   <% end %>
 
   <div class="row">
-      <div class="card-header border-0 font-weight-bold"><%= pluralize(@comments.length, 'comment') %></div>
+      <div class="card-header border-0 font-weight-bold"><%= pluralize(@comments.length, t('.count')) %></div>
   </div>
   <div id="comment-box">
     <%= render 'comments', comments: @comments, article: @article %>

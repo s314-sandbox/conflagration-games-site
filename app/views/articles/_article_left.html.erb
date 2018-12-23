@@ -23,13 +23,13 @@
       <strong><%= article.title %></strong>
     </h3>
     <p><%= article.description.html_safe %></p>
-    <p>by
+    <p><%= t('.by') %>
       <a>
         <strong><%= article.author.email %></strong>
       </a>, <%= article.created_at %></p>
-    <%= link_to "Read more", article_path(article), class: "btn btn-amber btn-rounded btn-md waves-effect waves-light" %>
-    <%= link_to "Edit", edit_article_path(article), class: "btn btn-outline-amber btn-rounded btn-md waves-effect waves-light" %>
-    <%= link_to "Delete", article_path(article), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-outline-red btn-rounded btn-md waves-effect waves-light" %>
+    <%= link_to t('.more'), article_path(article), class: "btn btn-amber btn-rounded btn-md waves-effect waves-light" %>
+    <%= link_to t('.edit'), edit_article_path(article), class: "btn btn-outline-amber btn-rounded btn-md waves-effect waves-light" %>
+    <%= link_to t('.delete'), article_path(article), method: :delete, data: {confirm: t('.sure')}, class: "btn btn-outline-red btn-rounded btn-md waves-effect waves-light" %>
   </div>
   <!--Grid column-->
 

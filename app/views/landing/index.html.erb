@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <section class="text-center py-4">
-    <h2 class="h1-responsive font-weight-bold text-center mb-5 pt-4">Last news</h2>
+    <h2 class="h1-responsive font-weight-bold text-center mb-5 pt-4"><%= t('.last_news') %></h2>
 
     <div class="row">
     <% @news.each do |item|  %>
@@ -26,7 +26,7 @@
         <p>by
           <a class="font-weight-bold dark-grey-text"><%= item.author.email %></a>, <%= item.created_at %></p>
         <p class="grey-text"><%= item.description %></p>
-        <%= link_to "Read more", article_path(item), class: "btn btn-amber btn-rounded btn-md waves-effect waves-light" %>
+        <%= link_to t('.read_more'), article_path(item), class: "btn btn-amber btn-rounded btn-md waves-effect waves-light" %>
       </div>
     <% end %>
     </div>
