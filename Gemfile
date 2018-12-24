@@ -67,3 +67,11 @@ gem 'font-awesome-sass', '~> 4.6', '>= 4.6.2'
 gem 'jquery-rails'
 gem 'rails-i18n'
 gem 'tinymce-rails'
+
+# Testing
+group :development, :test do
+  gem 'database_cleaner'
+  gem 'factory_bot_rails'
+  gem 'rspec'
+  gem 'rspec-rails', '~> 3.6'
+end
