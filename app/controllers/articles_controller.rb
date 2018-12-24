@@ -1,8 +1,18 @@
+LIMIT = 3
+
 class ArticlesController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
+  before_action :check_if_admin, except: [:show, :index]
 
   def index
-    @articles = Article.all
+    if params.has_key?(:page) && params[:page].to_i > 1
+      @num = params[:page].to_i
+    else
+      @num = 1
+    end
+    articles = Article.all
+    @paged = paginate(articles, @num, LIMIT)
+    @pages = (articles.length / LIMIT.to_f).ceil
   end
 
   def new
@@ -58,5 +68,12 @@ class ArticlesController < ApplicationController
     taken[:category] = Category.find(taken[:category])
     taken[:author] = User.find(taken[:author])
     taken
+  end
+
+  def paginate(ids, page_num, limit)
+    upper_limit = page_num * limit - 1
+    lower_limit = upper_limit - limit + 1
+
+    (lower_limit..upper_limit).map { |n| ids[n] }.compact
   end
 end

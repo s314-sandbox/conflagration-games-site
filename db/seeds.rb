@@ -5,4 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Category.create(title: 'Child of the Digital Age', game: true)
+user = User.create(email: 'admin@s314.ru', password: 'qwerty', password_confirmation: 'qwerty')
+user.update_attribute :admin, true
+category = Category.create(title: 'Production', game: false)
+Article.create(
+  title: 'Начало положено',
+  description: 'Здесь начинается история Conflagration Games!' \
+              'Наш сайт будет потихоньку наполняться всевозможными новостями ' \
+              'о разработке и всякой всячине :) Ждите обновлений!',
+  contents: "<h2>Начало положено!</h2>
+            Теперь мы можем свободно доносить до вас новости с фронта разработки, дорогие пользователи!",
+  category: category,
+  author: user
+)

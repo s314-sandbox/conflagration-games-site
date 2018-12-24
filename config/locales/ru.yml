@@ -41,6 +41,7 @@ ru:
   logogut: "Выход"
   ru_ru: "РУ"
   en_us: "EN"
+  admin_access: "Чтобы получить сюда доступ, нужно быть администратором!"
   landing:
     index:
       last_news: "Последние новости"

@@ -1,5 +1,23 @@
 <div class="container-fluid">
-  <% @articles.each do |article| %>
+  <% @paged.each do |article| %>
     <%= render 'articles/article_left', article: article %>
   <% end %>
+
+  <nav class="d-flex justify-content-center mt-5">
+    <ul class="pagination pg-amber mb-0">
+
+        <% 1.upto(@pages) do |num| %>
+          <% if num == @num %>
+            <li class="page-item active">
+              <%= link_to num.to_s, current_path(page: num), class: 'page-link waves-effect waves-effect' %>
+            </li>
+          <% else %>
+            <li class="page-item">
+              <%= link_to num.to_s, current_path(page: num), class: 'page-link waves-effect waves-effect' %>
+            </li>
+          <% end %>
+        <% end %>
+
+    </ul>
+  </nav>
 </div>

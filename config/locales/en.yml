@@ -41,6 +41,7 @@ en:
   logogut: "Logout"
   ru_ru: "RU"
   en_us: "EN"
+  admin_access: "You need to be an admin to access this page!"
   landing:
     index:
       last_news: "Last news"

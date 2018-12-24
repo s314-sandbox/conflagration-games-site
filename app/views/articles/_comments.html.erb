@@ -7,7 +7,9 @@
         <h5 class="font-weight-bold mt-0">
           <a href=""><%= comment.user.email %></a>
           <span class="pull-right">
+            <% if current_user.try(:admin?) %>
               <%= f.submit t('articles.show.delete'), class: 'btn btn-red btn-sm waves-effect waves-light delete-button' %>
+            <% end %>
           </span>
         </h5>
         <%= comment.contents %>
