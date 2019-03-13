@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   get 'sample/index'
   root 'landing#index'
   resources :articles do
+    collection do
+      get 'games'
+    end
     resources :comments, only: [:create, :index, :destroy]
   end
   resources :categories

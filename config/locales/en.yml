@@ -41,12 +41,53 @@ en:
   logogut: "Logout"
   ru_ru: "RU"
   en_us: "EN"
+  by_a: "by"
+  we_are: "We are"
   admin_access: "You need to be an admin to access this page!"
+  devise:
+    registrations:
+      edit:
+        header: "Edit user"
+        email: "E-mail"
+        password: "Password"
+        password_c: "Confirm password"
+        password_cur: "Current password"
+        submit: "Update"
+        cancel: "Cancel account"
+        unhappy: "Unhappy?"
+        cancel_submit: "Cancel account"
+        back: "Back"
+        minimum: "minimum characters"
+        blank: "leave blank if you don't want to change it"
+        admin: "Admin cannot be deleted. Use server console to perform this action."
+      new:
+        header: "Sign up"
+        email: "E-mail"
+        password: "Password"
+        password_c: "Confirm password"
+        submit: "Sign up"
+        minimum: "minimum characters"
+    sessions:
+      new:
+        header: "Log in"
+        email: "E-mail"
+        password: "Password"
+        remember: "Remember me?"
+        submit: "Log in"
+    shared:
+      links:
+        login: "Log in"
+        signup: "Sign up"
+        forgot: "Forgot your password?"
   landing:
     index:
       last_news: "Last news"
       read_more: "Read more"
   articles:
+    index:
+      header: "All news"
+    games:
+      header: "Games news"
     new:
       header: "Add new article"
       title: "Title"
@@ -67,7 +108,7 @@ en:
       comment_welcome: "Your comment"
       post: "Post"
       delete: "Delete"
-      count: "comment"
+      count: "Last comments"
     article_left:
       by: "by"
       more: "Read more"

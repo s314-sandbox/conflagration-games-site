@@ -41,12 +41,53 @@ ru:
   logogut: "Выход"
   ru_ru: "РУ"
   en_us: "EN"
+  by_a: "За авторством"
+  we_are: "Мы \u2014"
   admin_access: "Чтобы получить сюда доступ, нужно быть администратором!"
+  devise:
+    registrations:
+      edit:
+        header: "Редактировать пользователя"
+        email: "E-mail"
+        password: "Пароль"
+        password_c: "Подтверждение пароля"
+        password_cur: "Текущий пароль"
+        submit: "Обновить"
+        cancel: "Удалить аккаунт"
+        unhappy: "Мы вам надоели?"
+        cancel_submit: "Удалить аккаунт"
+        back: "Назад"
+        minimum: "символов минимум"
+        blank: "оставьте пустым, если не хотите его менять"
+        admin: "Администратора нельзя удалить таким образом. Воспользуйтесь консолью сервера"
+      new:
+        header: "Регистрация"
+        email: "E-mail"
+        password: "Пароль"
+        password_c: "Подтверждение пароля"
+        submit: "Зарегистрироваться"
+        minimum: "символов минимум"
+    sessions:
+      new:
+        header: "Войти"
+        email: "E-mail"
+        password: "Пароль"
+        remember: "Запомнить меня"
+        submit: "Войти"
+    shared:
+      links:
+        login: "Вход"
+        signup: "Регистрация"
+        forgot: "Забыли пароль?"
   landing:
     index:
       last_news: "Последние новости"
       read_more: "Узнать больше"
   articles:
+    index:
+      header: "Все новости"
+    games:
+      header: "Игровые новости"
     new:
       header: "Написать новую статью"
       title: "Заголовок"
@@ -67,7 +108,7 @@ ru:
       comment_welcome: "Хотите прокомментировать?"
       post: "Отправить"
       delete: "Удалить"
-      count: "комментарий"
+      count: "Последние комментарии"
     article_left:
       by: "за авторством"
       more: "Узнать больше"
